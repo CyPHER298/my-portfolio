@@ -1,0 +1,74 @@
+$first-font-color: #f9f9f9;
+$second-font-color: #f1cd18;
+$background1: #272727;
+$background2: #424242;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin letter-spacing {
+  letter-spacing: 10px;
+}
+
+.container {
+  @include flex-center;
+  margin: 0 3em;
+  gap: 2em;
+  height: 40vw;
+}
+
+.playing-guitar-img {
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
+  border-radius: 2em 2em 0 0;
+  object-fit: cover;
+  object-position: top;
+  overflow: hidden;
+  box-shadow: 0 0 0 1em $background1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.title * {
+  display: grid;
+  font-size: 4em;
+}
+
+.title-name {
+  @include letter-spacing;
+}
+
+.title-role {
+  @include letter-spacing;
+  color: $second-font-color;
+}
+
+.subtitle {
+  color: $second-font-color;
+}
+
+.text {
+  color: $first-font-color;
+  font-size: 1.2em;
+  max-width: 70%;
+  font-weight: 500;
+}
+
+.empty {
+  position: absolute;
+  left: 0;
+  bottom: 6%;
+  background-color: $background2;
+  width: 100%;
+  height: 18em;
+  z-index: -1;
+}
